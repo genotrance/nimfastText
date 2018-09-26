@@ -17,7 +17,7 @@ This will download, wrap and install nimfastText in the standard Nimble package 
 __Usage__
 
 ```nim
-import nimfastText/fastText
+import nimfastText/fasttext
 
 var ft: FastText
 ```

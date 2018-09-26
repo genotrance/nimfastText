@@ -1,3 +1,3 @@
-import nimfastText/fastText
+import nimfastText/fasttext
 
 var ft: FastText
