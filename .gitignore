@@ -1,0 +1,5 @@
+nimfastText
+nimcache
+*.exe
+*.swp
+test*
