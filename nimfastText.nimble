@@ -18,11 +18,7 @@ var cmd = ""
 if detectOs(Windows):
   cmd = "cmd /c "
 
-task nimgen, "Install nimgen":
-  exec cmd & "nimble install nimgen -y"
-
 task setup, "Checkout and generate":
-  #nimgenTask()
   exec cmd & "nimgen nimfastText.cfg"
 
 before install:
