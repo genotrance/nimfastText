@@ -16,6 +16,8 @@ This will download, wrap and install nimfastText in the standard Nimble package 
 
 __Usage__
 
+Module documentation can be found [here](http://nimgen.genotrance.com/nimfastText).
+
 ```nim
 import nimfastText/fasttext
 
