@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "fastText wrapper for Nim"
 license       = "MIT"
@@ -11,19 +11,20 @@ skipDirs = @["tests"]
 
 requires "nimgen >= 0.4.0"
 
-import distros
-import ospaths
+var
+  name = "nimfastText"
+  cmd = when defined(Windows): "cmd /c " else: ""
 
-var cmd = ""
-if detectOs(Windows):
-  cmd = "cmd /c "
+mkDir(name)
 
 task setup, "Checkout and generate":
-  exec cmd & "nimgen nimfastText.cfg"
+  if gorgeEx(cmd & "nimgen").exitCode != 0:
+    withDir(".."):
+      exec "nimble install nimgen -y"
+  exec cmd & "nimgen " & name & ".cfg"
 
 before install:
   setupTask()
 
 task test, "Run tests":
-  withDir("tests"):
-    exec "nim cpp -r testfast"
+  exec "nim cpp -r tests/t" & name & ".nim"

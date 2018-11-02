@@ -2,7 +2,7 @@ import nimfastText/fasttext
 
 var ft: FastText
 
-ft.loadModel(constructStdString("lid.176.ftz"))
+ft.loadModel(constructStdString("tests/lid.176.ftz"))
 
 var 
     print_prob = false
@@ -13,6 +13,6 @@ var
 
 ft.predict(ss,k,print_prob,threshold)
 
-ft.predict(ss,k,output,threshold)
+#ft.predict(ss,k,output,threshold)
 
-echo output[0]
+#echo output[0]
