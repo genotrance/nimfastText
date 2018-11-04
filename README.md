@@ -14,6 +14,8 @@ NimfastText can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 This will download, wrap and install nimfastText in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
 
+NimfastText is not supported on gcc < 5.x. PRs enabling support are welcome. See [here](https://forum.nim-lang.org/t/4354#27119) for details.
+
 __Usage__
 
 Module documentation can be found [here](http://nimgen.genotrance.com/nimfastText).

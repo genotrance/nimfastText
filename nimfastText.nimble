@@ -9,11 +9,18 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimgen >= 0.4.0"
+requires "nimgen >= 0.4.0", "nim >= 0.19.0"
+
+import strutils
 
 var
   name = "nimfastText"
   cmd = when defined(Windows): "cmd /c " else: ""
+
+let gccver = staticExec("gcc --version").split("\n")[0].split(" ")[^1]
+if gccver < "5.0.0":
+  echo "Not supported on gcc < 5.x"
+  quit(1)
 
 mkDir(name)
 
