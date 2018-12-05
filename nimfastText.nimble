@@ -19,10 +19,10 @@ var
 
 let gccver = staticExec("gcc --version").split("\n")[0].split(" ")[^1]
 if gccver < "5.0.0":
-  echo "Not supported on gcc < 5.x"
-  quit(1)
+  raise newException(Exception, "Install failed, package not supported on gcc < 5.x")
 
-mkDir(name)
+if fileExists(name & ".nimble"):
+  mkDir(name)
 
 task setup, "Checkout and generate":
   if gorgeEx(cmd & "nimgen").exitCode != 0:
