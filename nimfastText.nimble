@@ -17,9 +17,10 @@ var
   name = "nimfastText"
   cmd = when defined(Windows): "cmd /c " else: ""
 
-let gccver = staticExec("gcc --version").split("\n")[0].split(" ")[^1]
-if gccver < "5.0.0":
-  raise newException(Exception, "Install failed, package not supported on gcc < 5.x")
+if not defined(MacOSX):
+  let gccver = staticExec("gcc --version").split("\n")[0].split(" ")[^1]
+  if gccver < "5.0.0":
+    raise newException(Exception, "Install failed, package not supported on gcc < 5.x")
 
 if fileExists(name & ".nimble"):
   mkDir(name)
