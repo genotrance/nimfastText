@@ -1,4 +1,4 @@
-import nimfastText/fasttext
+import nimfastText/[fasttext, utils]
 
 var ft: FastText
 
@@ -9,7 +9,7 @@ var
     k:int32 = 1
     threshold:cfloat = 0.0
     words: vect[int32]
-    output:vect[pair[cfloat, int32]]
+    output: vect[pair[cfloat, int32]]
     ss = constructStdIStringStream(constructStdString("അമ്മ"))
 
 #ft.predict(ss,k,print_prob,threshold)
