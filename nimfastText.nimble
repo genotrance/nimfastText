@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.2"
+version       = "0.1.3"
 author        = "genotrance"
 description   = "fastText wrapper for Nim"
 license       = "MIT"
@@ -9,7 +9,7 @@ skipDirs = @["tests"]
 
 # Dependencies
 
-requires "nimgen >= 0.4.0", "nim >= 0.19.0"
+requires "nimgen >= 0.5.0", "nim >= 0.19.0"
 
 import strutils
 
